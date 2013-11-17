@@ -38,5 +38,5 @@ Based on Maven, Hibernate, HSQLDB and Twitter Bootstrap.</p>
 	<li><a href="http://www.java-skoleni.cz" target="_blank"
 		title="Java školení">Java školení</a> (in Czech)</li>
 	<li><a href="http://www.sql-skoleni.cz" target="_blank"
-		title="Java školení">SQL školení</a> (in Czech)</li>
+		title="SQL školení">SQL školení</a> (in Czech)</li>
 </ul>
