@@ -36,7 +36,7 @@ Based on Maven, Hibernate, HSQLDB and Twitter Bootstrap.</p>
 		target="_blank" title="Website monitoring software">Website
 			monitoring software</a> (free OSS software)</li>
 	<li><a href="http://www.java-skoleni.cz" target="_blank"
-		title="Java �kolen�">Java �kolen�</a> (in Czech)</li>
+		title="Java školení">Java školení</a> (in Czech)</li>
 	<li><a href="http://www.sql-skoleni.cz" target="_blank"
-		title="Java �kolen�">SQL �kolen�</a> (in Czech)</li>
+		title="Java školení">SQL školení</a> (in Czech)</li>
 </ul>
