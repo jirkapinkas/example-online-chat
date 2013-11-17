@@ -1,4 +1,4 @@
-<h1>Just a simple application to showcase how to create eshop in Spring framework</h1>
+<h1>Just a simple application to showcase how to create online chat</h1>
 
 <p>This project is to showcase Spring, Spring Web MVC, JSPs, JSTL and three tier architecture. 
 Based on Maven, Hibernate, HSQLDB and Twitter Bootstrap.</p>
