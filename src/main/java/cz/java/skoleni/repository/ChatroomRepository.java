@@ -23,11 +23,10 @@ public class ChatroomRepository {
 	}
 
 	public Chatroom single(int id) {
-		return entityManager
-				.createNamedQuery(
-						Chatroom.FIND_ONE,
-						Chatroom.class).setParameter("id", id)
-				.getSingleResult();
+//		return entityManager
+//				.createNamedQuery(Chatroom.FIND_ONE, Chatroom.class)
+//				.setParameter("id", id).getSingleResult();
+		return entityManager.find(Chatroom.class, id);
 	}
 
 	public void delete(int id) {
@@ -47,8 +46,9 @@ public class ChatroomRepository {
 	}
 
 	public void deleteAll() {
-        entityManager.createNativeQuery("delete from chatmessage").executeUpdate();
-        entityManager.createNativeQuery("delete from chatroom").executeUpdate();
+		entityManager.createNativeQuery("delete from chatmessage")
+				.executeUpdate();
+		entityManager.createNativeQuery("delete from chatroom").executeUpdate();
 	}
 
 }

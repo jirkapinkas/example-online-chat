@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import cz.java.skoleni.dto.ChatroomDto;
 import cz.java.skoleni.entity.Chatmessage;
 import cz.java.skoleni.entity.Chatroom;
 import cz.java.skoleni.service.ChatroomService;
@@ -27,53 +28,60 @@ public class ChatroomController {
 
 	@Autowired
 	private ChatroomService chatroomService;
-	
+
 	@RequestMapping
 	public String show() {
 		return "chatroom";
 	}
-	
+
 	@RequestMapping("/detail/{id}")
 	@ResponseBody
-	public Chatroom restDetail(@PathVariable int id) {
-		return chatroomService.single(id);
+	public ChatroomDto restDetail(@PathVariable int id) {
+		return chatroomService.getSingleChatroomDto(id);
 	}
-	
+
 	@RequestMapping("/csv")
-	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws IOException {
 		response.getWriter().write("csv,works");
 	}
-	
-	
+
 	@ModelAttribute("chatroom")
 	public Chatroom create() {
 		Chatroom chatroom = new Chatroom();
 		return chatroom;
 	}
 
-	@RequestMapping(method=RequestMethod.POST)
-	public String save(@ModelAttribute @Valid Chatroom chatroom, BindingResult bindingResult) {
-		if(bindingResult.hasErrors()) {
+	@RequestMapping(method = RequestMethod.POST)
+	public String save(@ModelAttribute @Valid Chatroom chatroom,
+			BindingResult bindingResult) {
+		if (bindingResult.hasErrors()) {
 			return "chatroom";
 		}
 		chatroomService.save(chatroom);
 		return "redirect:/chatroom.html?success=true";
 	}
-	
+
 	@RequestMapping("/list")
 	public String list(Model model) {
 		model.addAttribute("chatrooms", chatroomService.list());
 		return "list";
 	}
-	
+
 	@RequestMapping("/detail")
 	public String detail(Model model, @RequestParam int id) {
 		Chatroom chatroom = chatroomService.single(id);
 		model.addAttribute("chatroom", chatroom);
 		return "detail";
 	}
-	
-	@RequestMapping(value="/detail", method=RequestMethod.POST)
+
+	@RequestMapping("/remove")
+	public String remove(Model model, @RequestParam int id) {
+		chatroomService.delete(id);
+		return "redirect:/chatroom/list.html";
+	}
+
+	@RequestMapping(value = "/detail", method = RequestMethod.POST)
 	public String saveMessage(@RequestParam String message, @RequestParam int id) {
 		Chatmessage chatMessage = new Chatmessage();
 		chatMessage.setMessage(message);

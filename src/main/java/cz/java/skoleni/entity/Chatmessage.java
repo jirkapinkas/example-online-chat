@@ -8,10 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlTransient;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Chatmessage {
@@ -25,12 +21,10 @@ public class Chatmessage {
 	@Column(name = "added_date")
 	private Date addedDate;
 
-	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "chatroom_id")
 	private Chatroom chatroom;
 
-	@XmlTransient
 	public int getId() {
 		return id;
 	}
@@ -39,7 +33,6 @@ public class Chatmessage {
 		this.id = id;
 	}
 
-	@XmlTransient
 	public Date getAddedDate() {
 		return addedDate;
 	}
@@ -48,7 +41,6 @@ public class Chatmessage {
 		this.addedDate = addedDate;
 	}
 
-	@XmlAttribute(name = "value")
 	public String getMessage() {
 		return message;
 	}
@@ -57,7 +49,6 @@ public class Chatmessage {
 		this.message = message;
 	}
 
-	@XmlTransient
 	public Chatroom getChatroom() {
 		return chatroom;
 	}

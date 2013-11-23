@@ -2,6 +2,7 @@ package cz.java.skoleni.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,11 +11,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
-import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
 @Entity
 @NamedQueries({
 		@NamedQuery(name = Chatroom.FIND_ALL, query = "from Chatroom c order by c.id"),
@@ -35,7 +32,7 @@ public class Chatroom {
 	private String description;
 
 	@OrderBy("id desc")
-	@OneToMany(mappedBy = "chatroom")
+	@OneToMany(mappedBy = "chatroom", cascade= CascadeType.REMOVE)
 	private List<Chatmessage> chatmessages;
 
 	public int getId() {
@@ -62,8 +59,6 @@ public class Chatroom {
 		this.description = description;
 	}
 
-	@XmlElementWrapper(name = "messages")
-	@XmlElement(name = "message")
 	public List<Chatmessage> getChatmessages() {
 		return chatmessages;
 	}
