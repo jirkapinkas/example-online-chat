@@ -22,11 +22,11 @@ public class ChatroomService {
 	@Autowired
 	private ChatroomRepository chatroomRepository;
 
-	public List<Chatroom> list() {
+	public List<Chatroom> getChatrooms() {
 		return chatroomRepository.list();
 	}
 
-	public Chatroom single(int id) {
+	public Chatroom getChatroom(int id) {
 		return chatroomRepository.single(id);
 	}
 

@@ -26,10 +26,10 @@ public class ChatroomServiceIT {
 
 	@Test
 	public void testSave() {
-		int size = chatroomService.list().size();
+		int size = chatroomService.getChatrooms().size();
 		Chatroom chatroom = new Chatroom();
 		chatroomService.save(chatroom);
-		assertEquals(size + 1, chatroomService.list().size());
+		assertEquals(size + 1, chatroomService.getChatrooms().size());
 	}
 
 }

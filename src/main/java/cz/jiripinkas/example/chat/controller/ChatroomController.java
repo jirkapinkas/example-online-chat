@@ -64,13 +64,13 @@ public class ChatroomController {
 
 	@RequestMapping("/list")
 	public String list(Model model) {
-		model.addAttribute("chatrooms", chatroomService.list());
+		model.addAttribute("chatrooms", chatroomService.getChatrooms());
 		return "list";
 	}
 
 	@RequestMapping("/detail")
 	public String detail(Model model, @RequestParam int id) {
-		Chatroom chatroom = chatroomService.single(id);
+		Chatroom chatroom = chatroomService.getChatroom(id);
 		model.addAttribute("chatroom", chatroom);
 		return "detail";
 	}
