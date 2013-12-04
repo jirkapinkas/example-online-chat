@@ -11,6 +11,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <form:form cssClass="form-horizontal" commandName="chatroom">
+
 	<c:if test="${param.success}">
 		<div class="form-group">
 			<div class="col-sm-6">
@@ -20,6 +21,14 @@
 			</div>
 		</div>
 	</c:if>
+
+	<div class="form-group errorMsg" style="display: none">
+		<div class="col-sm-6">
+			<div class="alert alert-danger">
+				Error! Check form!
+			</div>
+		</div>
+	</div>
 
 	<form:errors path="name" />
 	<div class="form-group">
@@ -36,10 +45,21 @@
 	</div>
 	<div class="form-group">
 		<div class="col-sm-5">
-			<input type="submit" class="btn btn-primary" />
+			<input type="submit" class="btn btn-primary btnSubmit" />
 		</div>
 	</div>
 </form:form>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".btnSubmit").click(function(e) {
+			if(! $("#name").val()) {
+				e.preventDefault();
+				$(".errorMsg").show();
+			}
+		});
+	});
+</script>
 
 
 <jsp:include page="layout/footer.jsp" />
