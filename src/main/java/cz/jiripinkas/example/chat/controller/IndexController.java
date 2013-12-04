@@ -1,4 +1,4 @@
-package cz.java.skoleni.controller;
+package cz.jiripinkas.example.chat.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

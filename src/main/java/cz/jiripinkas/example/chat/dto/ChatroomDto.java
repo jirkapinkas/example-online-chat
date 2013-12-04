@@ -1,4 +1,4 @@
-package cz.java.skoleni.dto;
+package cz.jiripinkas.example.chat.dto;
 
 import java.util.List;
 

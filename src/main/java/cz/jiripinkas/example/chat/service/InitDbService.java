@@ -1,11 +1,13 @@
-package cz.java.skoleni.service;
+package cz.jiripinkas.example.chat.service;
+
+import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import cz.java.skoleni.annotation.TransactionalRW;
-import cz.java.skoleni.entity.Chatroom;
+import cz.jiripinkas.example.chat.annotation.TransactionalRW;
+import cz.jiripinkas.example.chat.entity.Chatroom;
 
 @Service
 public class InitDbService {
@@ -14,9 +16,9 @@ public class InitDbService {
 	private ChatroomService chatroomService;
 
 	@TransactionalRW
-	// @PostConstruct
+	@PostConstruct
 	// initialize database each day
-	@Scheduled(fixedDelay = 86400000)
+	@Scheduled(fixedDelay = 86400000, initialDelay = 86400000)
 	public void init() {
 		System.out.println("*** START INIT DATABASE ***");
 		chatroomService.deleteAll();

@@ -1,4 +1,4 @@
-package cz.java.skoleni.controller;
+package cz.jiripinkas.example.chat.controller;
 
 import java.io.IOException;
 
@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import cz.java.skoleni.dto.ChatroomDto;
-import cz.java.skoleni.entity.Chatmessage;
-import cz.java.skoleni.entity.Chatroom;
-import cz.java.skoleni.service.ChatroomService;
+import cz.jiripinkas.example.chat.dto.ChatroomDto;
+import cz.jiripinkas.example.chat.entity.Chatmessage;
+import cz.jiripinkas.example.chat.entity.Chatroom;
+import cz.jiripinkas.example.chat.service.ChatroomService;
 
 @Controller
 @RequestMapping("/chatroom")

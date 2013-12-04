@@ -1,4 +1,4 @@
-package cz.java.skoleni.annotation;
+package cz.jiripinkas.example.chat.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -9,10 +9,10 @@ import java.lang.annotation.Target;
 
 import org.springframework.transaction.annotation.Transactional;
 
-@Transactional(rollbackFor = Throwable.class, readOnly = true)
+@Transactional(rollbackFor = Throwable.class)
 @Target({ ElementType.METHOD, ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
 @Documented
-public @interface TransactionalRO {
+public @interface TransactionalRW {
 }

@@ -1,4 +1,4 @@
-package cz.java.skoleni.repository;
+package cz.jiripinkas.example.chat.repository;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
-import cz.java.skoleni.entity.Chatmessage;
-import cz.java.skoleni.entity.Chatroom;
+import cz.jiripinkas.example.chat.entity.Chatmessage;
+import cz.jiripinkas.example.chat.entity.Chatroom;
 
 @Repository
 public class ChatroomRepository {

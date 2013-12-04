@@ -1,4 +1,4 @@
-package cz.java.skoleni.entity;
+package cz.jiripinkas.example.chat.entity;
 
 import java.util.Date;
 

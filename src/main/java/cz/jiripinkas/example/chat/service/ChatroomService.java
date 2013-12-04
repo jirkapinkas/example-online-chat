@@ -1,4 +1,4 @@
-package cz.java.skoleni.service;
+package cz.jiripinkas.example.chat.service;
 
 import java.util.Date;
 import java.util.List;
@@ -8,12 +8,12 @@ import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import cz.java.skoleni.annotation.TransactionalRO;
-import cz.java.skoleni.annotation.TransactionalRW;
-import cz.java.skoleni.dto.ChatroomDto;
-import cz.java.skoleni.entity.Chatmessage;
-import cz.java.skoleni.entity.Chatroom;
-import cz.java.skoleni.repository.ChatroomRepository;
+import cz.jiripinkas.example.chat.annotation.TransactionalRO;
+import cz.jiripinkas.example.chat.annotation.TransactionalRW;
+import cz.jiripinkas.example.chat.dto.ChatroomDto;
+import cz.jiripinkas.example.chat.entity.Chatmessage;
+import cz.jiripinkas.example.chat.entity.Chatroom;
+import cz.jiripinkas.example.chat.repository.ChatroomRepository;
 
 @TransactionalRO
 @Service
