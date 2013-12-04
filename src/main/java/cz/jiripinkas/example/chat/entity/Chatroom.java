@@ -14,8 +14,8 @@ import javax.validation.constraints.Size;
 
 @Entity
 @NamedQueries({
-		@NamedQuery(name = Chatroom.FIND_ALL, query = "from Chatroom c order by c.id"),
-		@NamedQuery(name = Chatroom.FIND_ONE, query = "from Chatroom c left join fetch c.chatmessages where c.id = :id") })
+		@NamedQuery(name = Chatroom.FIND_ALL, query = "select c from Chatroom c order by c.id"),
+		@NamedQuery(name = Chatroom.FIND_ONE, query = "select c from Chatroom c left join fetch c.chatmessages where c.id = :id") })
 public class Chatroom {
 
 	public static final String FIND_ALL = "Chatroom.findAll";
